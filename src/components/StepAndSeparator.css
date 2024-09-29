@@ -1,0 +1,22 @@
+#stepIndicator {
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#separator {
+  width: 100px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.active {
+  background-color: #fc6c4c;
+}
+
+.inactive {
+  background-color: #e5e7eb;
+}
