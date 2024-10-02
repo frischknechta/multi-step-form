@@ -4,7 +4,15 @@ import { ButtonNext } from "./components/ButtonNext";
 import { ButtonBack } from "./components/ButtonBack";
 import { Step } from "./components/Step";
 import { Separator } from "./components/Separator";
-//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faSeedling,
+  faCompass,
+  faRocket,
+  faTrophy,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+library.add(faCompass, faRocket, faSeedling, faTrophy);
 
 function App() {
   const [step, setStep] = useState<number>(1);
@@ -118,42 +126,70 @@ function App() {
                 </p>
               </div>
               <fieldset className="level">
-                <input
-                  type="radio"
-                  name="level"
-                  id="beginner"
-                  value="beginner"
-                  checked={level === "beginner"}
-                  onChange={(event) => setLevel(event.target.value)}
-                />
-                <label htmlFor="beginner">Beginner</label>
-                <input
-                  type="radio"
-                  name="level"
-                  id="intermediate"
-                  value="intermediate"
-                  checked={level === "intermediate"}
-                  onChange={(event) => setLevel(event.target.value)}
-                />
-                <label htmlFor="intermediate">Intermediate</label>
-                <input
-                  type="radio"
-                  name="level"
-                  id="advanced"
-                  value="advanced"
-                  checked={level === "advanced"}
-                  onChange={(event) => setLevel(event.target.value)}
-                />
-                <label htmlFor="advanced">Advanced</label>
-                <input
-                  type="radio"
-                  name="level"
-                  id="expert"
-                  value="expert"
-                  checked={level === "expert"}
-                  onChange={(event) => setLevel(event.target.value)}
-                />
-                <label htmlFor="expert">Expert</label>
+                <label htmlFor="beginner">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="beginner"
+                    value="Beginner"
+                    checked={level === "Beginner"}
+                    onChange={(event) => setLevel(event.target.value)}
+                  />
+                  <div className="radioName">
+                    <div className="iconBg">
+                      <FontAwesomeIcon icon={faSeedling} />
+                    </div>
+                    <span>Beginner</span>
+                  </div>
+                </label>
+                <label htmlFor="intermediate">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="intermediate"
+                    value="Intermediate"
+                    checked={level === "Intermediate"}
+                    onChange={(event) => setLevel(event.target.value)}
+                  />
+                  <div className="radioName">
+                    <div className="iconBg">
+                      <FontAwesomeIcon icon={faCompass} />
+                    </div>
+                    <span>Intermediate</span>
+                  </div>
+                </label>
+                <label htmlFor="advanced">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="advanced"
+                    value="Advanced"
+                    checked={level === "Advanced"}
+                    onChange={(event) => setLevel(event.target.value)}
+                  />
+                  <div className="radioName">
+                    <div className="iconBg">
+                      <FontAwesomeIcon icon={faRocket} />
+                    </div>
+                    <span>Advanced</span>
+                  </div>
+                </label>
+                <label htmlFor="expert">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="expert"
+                    value="Expert"
+                    checked={level === "Expert"}
+                    onChange={(event) => setLevel(event.target.value)}
+                  />
+                  <div className="radioName">
+                    <div className="iconBg">
+                      <FontAwesomeIcon icon={faTrophy} />
+                    </div>
+                    <span>Expert</span>
+                  </div>
+                </label>
               </fieldset>
             </section>
           )}
@@ -169,38 +205,64 @@ function App() {
                 </p>
               </div>
               <fieldset className="challenge">
-                <input
-                  type="checkbox"
-                  name="challenge"
-                  id="html"
-                  value="html"
-                  onChange={handleChange}
-                />
-                <label htmlFor="html">HTML/CSS/JS</label>
-                <input
-                  type="checkbox"
-                  name="challenge"
-                  id="reactJs"
-                  value="reactJs"
-                  onChange={handleChange}
-                />
-                <label htmlFor="reactJs">ReactJs</label>
-                <input
-                  type="checkbox"
-                  name="challenge"
-                  id="angularJs"
-                  value="angularJs"
-                  onChange={handleChange}
-                />
-                <label htmlFor="angularJs">AngularJs</label>
-                <input
-                  type="checkbox"
-                  name="challenge"
-                  id="vueJs"
-                  value="vueJs"
-                  onChange={handleChange}
-                />
-                <label htmlFor="vueJs">Vue.js</label>
+                <label htmlFor="html">
+                  <input
+                    type="checkbox"
+                    name="challenge"
+                    id="html"
+                    value="HTML/CSS/JS"
+                    onChange={handleChange}
+                    checked={
+                      challenge.find((elem) => elem === "HTML/CSS/JS")
+                        ? true
+                        : false
+                    }
+                  />
+                  <span>HTML/CSS/JS</span>
+                </label>
+                <label htmlFor="reactJs">
+                  <input
+                    type="checkbox"
+                    name="challenge"
+                    id="reactJs"
+                    value="ReactJs"
+                    onChange={handleChange}
+                    checked={
+                      challenge.find((elem) => elem === "ReactJs")
+                        ? true
+                        : false
+                    }
+                  />
+                  <span>ReactJs</span>
+                </label>
+                <label htmlFor="angularJs">
+                  <input
+                    type="checkbox"
+                    name="challenge"
+                    id="angularJs"
+                    value="AngularJs"
+                    onChange={handleChange}
+                    checked={
+                      challenge.find((elem) => elem === "AngularJs")
+                        ? true
+                        : false
+                    }
+                  />
+                  <span>AngularJs</span>
+                </label>
+                <label htmlFor="vueJs">
+                  <input
+                    type="checkbox"
+                    name="challenge"
+                    id="vueJs"
+                    value="Vue.js"
+                    onChange={handleChange}
+                    checked={
+                      challenge.find((elem) => elem === "Vue.js") ? true : false
+                    }
+                  />
+                  <span>Vue.js</span>
+                </label>
               </fieldset>
             </section>
           )}
@@ -215,7 +277,7 @@ function App() {
                   accurate.
                 </p>
               </div>
-              <div>
+              <div className="container">
                 <div>
                   <p>Full Name</p>
                   <p>{name}</p>
@@ -228,8 +290,6 @@ function App() {
                   <p>Phone Number</p>
                   <p>{phone}</p>
                 </div>
-              </div>
-              <div>
                 <div>
                   <p>Portfolio/Github Link</p>
                   <p>{url}</p>
@@ -240,7 +300,7 @@ function App() {
                 </div>
                 <div>
                   <p>Challenge Preference</p>
-                  <p>{challenge}</p>
+                  <p>{challenge.join(", ")}</p>
                 </div>
               </div>
             </section>
@@ -254,6 +314,7 @@ function App() {
             <div></div>
           )}
           {step < 4 ? <ButtonNext step={step} setStep={setStep} /> : ""}
+          {step === 4 ? <div className="submit">Submit</div> : ""}
         </div>
       </main>
     </>

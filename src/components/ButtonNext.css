@@ -4,4 +4,12 @@ button {
   padding: 10px 26px;
   color: #ffffff;
   border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
 }

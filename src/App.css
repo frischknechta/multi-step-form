@@ -96,7 +96,9 @@ fieldset {
   gap: 30px;
 }
 
-label {
+/* STEP 1 */
+
+.step1 label {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -109,6 +111,123 @@ label {
   border-radius: 10px;
   height: 40px;
   padding-left: 12px;
+}
+
+/* STEP 2 */
+
+.step2 input {
+  display: none;
+}
+
+.step2 .radioName {
+  width: 270px;
+  height: 69px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.step2 label input:checked + .radioName {
+  border-radius: 10px;
+  border: 1px solid #fc6c4c;
+}
+
+.step2 .iconBg {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #fc6c4c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 16px;
+}
+
+/* STEP 3 */
+
+.step3 label {
+  width: 270px;
+  height: 69px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+}
+
+.step3 label:has(input:checked) {
+  border-radius: 10px;
+  border: 1px solid #fc6c4c;
+}
+
+.step3 input {
+  margin-inline: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid #111827;
+}
+
+.step3 input:checked {
+  accent-color: #fc6c4c;
+}
+
+.step3 span {
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* STEP 4 */
+
+.step4 .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: space-between;
+  gap: 30px;
+
+  div {
+    border-radius: 10px;
+    background: rgba(229, 231, 235, 0.5);
+    display: flex;
+    width: 180px;
+    height: 70px;
+    padding: 16px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex-shrink: 0;
+    font-size: 12px;
+
+    p:first-of-type {
+      color: #4b5563;
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.submit {
+  background-color: #fc6c4c;
+  border: none;
+  padding: 10px 26px;
+  color: #ffffff;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
 }
 
 /* BUTTONS */

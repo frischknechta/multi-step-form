@@ -1,7 +1,13 @@
-button {
-  background-color: #fc6c4c;
-  border: none;
-  padding: 10px 26px;
-  color: #ffffff;
+.buttonBack {
   border-radius: 10px;
+  border: 1px solid #fc6c4c;
+  background: #fff;
+  padding: 10px 26px;
+  color: #fc6c4c;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

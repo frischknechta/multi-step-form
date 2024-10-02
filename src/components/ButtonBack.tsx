@@ -7,6 +7,7 @@ export const ButtonBack = (
 ) => {
   return (
     <button
+      className="buttonBack"
       onClick={() => {
         setStep(step - 1);
       }}
